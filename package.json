@@ -1,0 +1,26 @@
+{
+  "name": "repfinders",
+  "version": "1.0.0",
+  "description": "301 final project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rep-Finders/repFinders.git"
+  },
+  "author": "David Cole Austin Rogers Luis Manzo Steven Johnson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rep-Finders/repFinders/issues"
+  },
+  "homepage": "https://github.com/Rep-Finders/repFinders#readme",
+  "dependencies": {
+    "express": "^4.14.1",
+    "express-request-proxy": "^2.0.0",
+    "handlebars": "^4.0.6",
+    "pg": "^6.1.2"
+  }
+}
