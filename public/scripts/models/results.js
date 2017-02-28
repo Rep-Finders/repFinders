@@ -5,15 +5,16 @@ const googleKey = 'AIzaSyD8ekRODpXPsHFXHtxMrfQkV8e4ZqO6aEA';
 let inputAddress = '98065';
 
 
-function urOfficial(offTitle, name, div, email, phone, url, addr, party){
+function urOfficial(offTitle, name, div, email, phone, url, addr, party, divFormatted) {
   this.title = offTitle,
-  this.name = name,
-  this.div = div,
-  this.email = email,
-  this.phone = phone,
-  this.url = url,
-  this.addr = addr,
-  this.party = party
+    this.name = name,
+    this.div = div,
+    this.email = email,
+    this.phone = phone,
+    this.url = url,
+    this.addr = addr,
+    this.party = party,
+    this.divFormatted = divFormatted;
 }
 urOfficial.all = [];
 
@@ -22,11 +23,13 @@ $.ajax({
   method: 'GET',
   complete: (data) => {
     let officials = data.responseJSON.officials;
-    //  console.log(data);
-    data.responseJSON.offices.map((office) => {
+    let offices = data.responseJSON.offices;
+
+    offices.map((office) => {
+      let divFormatted = formatDivision(office); // breaks down weird division string into an object that is easier to work with.
 
       office.officialIndices.map((ind) => {
-//TODO: clean up this function. If else is sloppy.
+        //TODO: clean up this function. If else is sloppy.
         if (!officials[ind].emails) {
           officials[ind].emails = 'none';
         } else {
@@ -43,10 +46,29 @@ $.ajax({
           officials[ind].address = officials[ind].address[0];
         }
 
-        urOfficial.all.push(new urOfficial(office.name, officials[ind].name, office.divisionId, officials[ind].emails, officials[ind].phones[0], officials[ind].urls, officials[ind].address, officials[ind].party))
+        urOfficial.all.push(new urOfficial(office.name, officials[ind].name, office.divisionId, officials[ind].emails, officials[ind].phones[0], officials[ind].urls, officials[ind].address, officials[ind].party, divFormatted))
 
       })
     })
   }
+}).then(function () {
+  console.log(urOfficial.all)
 })
-.then(console.log(urOfficial.all))
+
+function formatDivision(office) {
+  let divFormatted = {};
+  office.divisionId.split('/')
+    .filter(function (sequence, index, self) {
+      return (sequence === self[self.length - 1]);
+    }).toString().split(':')
+    .forEach(function (divisionPair, index, self) {
+      divFormatted.divLevel = self[0];
+      if (self.indexOf('state') !== -1 || self.indexOf('country') !== -1) {
+        divFormatted.divName = self[1].toUpperCase();
+        return;
+      }
+      divFormatted.divName = self[1].slice(0, 1).toUpperCase() + self[1].slice(1);
+    });
+  return divFormatted
+}
+
