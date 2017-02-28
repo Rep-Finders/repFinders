@@ -19,16 +19,30 @@
     </script>
   </head>
   <body>
-    <section id="splashPage">
-
-    </section>
-    <section id="mainPage">
-
-    </section>
-    <section id="aboutPage">
-
-    </section>
-
+    <header>
+      <div class="siteHeader">
+        <h1 id="headerName">Rep-Finder</h1>
+        <nav class="mainNav">
+          <span class="iconMenu"></span>
+          <ul class="pageNave">
+            <li id="mainPage" data-section="splash" class="activeTab">Home</li>
+            <li id="resultsPage" data-section="results" class="activeTab">Results</li>
+            <li id="aboutPage" data-section="about" class="activeTab">About Us</li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div id="splashDisplay" class="tabContent">
+        <p>Nope.</p>
+      </div>
+      <div id="resultsDisplay" class="tabContent">
+        <p>Yes?</p>
+      </div>
+      <div id="aboutDisplay" class="tabContent">
+        <p>I dunno.</p>
+      </div>
+    </main>
     <footer>
 
     </footer>
@@ -41,5 +55,6 @@
     <script src="./scripts/views/aboutView.js"></script>
     <script src="./scripts/views/resultsView.js"></script>
     <script src="./scripts/views/splashView.js"></script>
+    <script src="./scripts/views/siteView.js"></script>
   </body>
 </html>
