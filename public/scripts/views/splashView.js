@@ -7,3 +7,12 @@
 // var context = {title: "My New Post", body: "This is my first post!"};
 // // return template(context);
 // $('#testHB').append(template(context))
+(function(module){
+  const splashView = {};
+
+  splashView.index = function () {
+    //render page
+  }
+
+  module.splashView = splashView;
+})(window);

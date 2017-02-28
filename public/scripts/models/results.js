@@ -1,11 +1,14 @@
 'use strict';
 
+
+(function(module){
 // const googleKey = 'AIzaSyBn8LzF8dJrO19Q_DtaMEiq9MQXtMxW3sQ';
 const googleKey = 'AIzaSyD8ekRODpXPsHFXHtxMrfQkV8e4ZqO6aEA';
 let inputAddress = '98065';
+  const results = {};
 
 
-function urOfficial(offTitle, name, div, email, phone, url, addr, party, divFormatted) {
+function Official(offTitle, name, div, email, phone, url, addr, party, divFormatted) {
   this.title = offTitle,
     this.name = name,
     this.div = div,
@@ -16,8 +19,9 @@ function urOfficial(offTitle, name, div, email, phone, url, addr, party, divForm
     this.party = party,
     this.divFormatted = divFormatted;
 }
-urOfficial.all = [];
+Official.all = [];
 
+  results.fetchAll = function(callback){
 $.ajax({
   url: `https://www.googleapis.com/civicinfo/v2/representatives?key=${googleKey}&address=${inputAddress}`,
   method: 'GET',
@@ -46,16 +50,18 @@ $.ajax({
           officials[ind].address = officials[ind].address[0];
         }
 
-        urOfficial.all.push(new urOfficial(office.name, officials[ind].name, office.divisionId, officials[ind].emails, officials[ind].phones[0], officials[ind].urls, officials[ind].address, officials[ind].party, divFormatted))
+        Official.all.push(new Official(office.name, officials[ind].name, office.divisionId, officials[ind].emails, officials[ind].phones[0], officials[ind].urls, officials[ind].address, officials[ind].party, divFormatted))
 
       })
     })
-  }
-}).then(function () {
-  console.log(urOfficial.all)
-})
+    .then(function(){
+      console.log(Official.all);
+      callback();
+    })
 
-function formatDivision(office) {
+  }
+
+results.formatDivision = function(office) {
   let divFormatted = {};
   office.divisionId.split('/')
     .filter(function (sequence, index, self) {
@@ -71,4 +77,8 @@ function formatDivision(office) {
     });
   return divFormatted
 }
+
+  module.results = results;
+  module.Official = Official;
+})(window);
 
