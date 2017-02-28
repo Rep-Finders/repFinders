@@ -4,7 +4,7 @@
 (function(module){
 // const googleKey = 'AIzaSyBn8LzF8dJrO19Q_DtaMEiq9MQXtMxW3sQ';
   const googleKey = 'AIzaSyD8ekRODpXPsHFXHtxMrfQkV8e4ZqO6aEA';
-  let inputAddress = '98065';
+  let inputAddress = '98338';
   const results = {};
 
 
@@ -39,11 +39,13 @@
             } else {
               officials[ind].emails = officials[ind].emails[0];
             }
+
             if (!officials[ind].urls) {
               officials[ind].urls = 'none';
             } else {
               officials[ind].urls = officials[ind].urls[0];
             }
+
             if (!officials[ind].address) {
               officials[ind].address = 'none';
             } else {
@@ -61,6 +63,12 @@
     callback();
     })//end .then
   }//end fetchAll
+
+  Official.prototype.toHtml = function() {
+    let source = $('#entry-template').html();
+    let template = Handlebars.compile(source);
+    return template(this);
+  }
 
   results.formatDivision = function(office) {
     let divFormatted = {};

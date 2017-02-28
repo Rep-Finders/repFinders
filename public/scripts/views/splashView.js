@@ -6,7 +6,8 @@
 //
 // var context = {title: "My New Post", body: "This is my first post!"};
 // // return template(context);
-// $('#testHB').append(template(context))
+// $('#resultsBox').append(template(context))
+
 (function(module){
   const splashView = {};
 
