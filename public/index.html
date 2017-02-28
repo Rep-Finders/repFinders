@@ -4,6 +4,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
+    <script id="entry-template" type="text/x-handlebars-template">
+      <div class="entry">
+        <h2>{{name}}</h2>
+        <h2>{{officeTitle}}</h2>
+        <h3>{{party}}</h3>
+        <ul>Contact Info
+          <li>Email: <a href="mailto:{{email}}">{{email}}</a></li>
+          <li>Phone: {{phone}}</li>
+          <li>Address: {{address}}</li>
+          <li>Website: <a href="{{url}}">{{url}}</a></li>
+        </ul>
+      </div>
+    </script>
   </head>
   <body>
     <section id="splashPage">
