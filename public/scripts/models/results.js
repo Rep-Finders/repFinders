@@ -64,6 +64,12 @@
     })//end .then
   }//end fetchAll
 
+  Official.prototype.toHtml = function() {
+    let source = $('#entry-template').html();
+    let template = Handlebars.compile(source);
+    return template(this);
+  }
+
   results.formatDivision = function(office) {
     let divFormatted = {};
     office.divisionId.split('/')
