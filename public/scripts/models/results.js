@@ -37,11 +37,13 @@
             } else {
               officials[ind].emails = officials[ind].emails[0];
             }
+
             if (!officials[ind].urls) {
               officials[ind].urls = 'none';
             } else {
               officials[ind].urls = officials[ind].urls[0];
             }
+
             if (!officials[ind].address) {
               officials[ind].address = 'none';
             } else {
