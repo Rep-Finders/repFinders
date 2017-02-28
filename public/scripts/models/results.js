@@ -9,15 +9,15 @@
 
 
   function Official(offTitle, name, div, email, phone, url, addr, party, divFormatted) {
-    this.title = offTitle,
-      this.name = name,
-      this.div = div,
-      this.email = email,
-      this.phone = phone,
-      this.url = url,
-      this.addr = addr,
-      this.party = party,
-      this.divFormatted = divFormatted;
+    this.officeTitle = offTitle,
+    this.name = name,
+    this.division = div,
+    this.email = email,
+    this.phone = phone,
+    this.url = url,
+    this.address = addr,
+    this.party = party,
+    this.divFormatted = divFormatted;
   }
   Official.all = [];
 

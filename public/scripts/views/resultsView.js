@@ -5,7 +5,19 @@
   const resultsView = {};
 
   resultsView.index = function (){
-    //render results?
+    //tohtml
+    //hide all
+    //show city section
+  }
+
+  resultsView.viewCounty = function(){
+    //hide other sections
+    //show county section
+  }
+
+  resultsView.viewCity = function () {
+    $('.results-divs').hide();
+    $('#results-city').fadeIn();
   }
 
   module.resultsView = resultsView;
