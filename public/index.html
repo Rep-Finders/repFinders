@@ -25,23 +25,36 @@
         <nav class="mainNav">
           <span class="iconMenu"></span>
           <ul class="pageNave">
-            <li id="mainPage" data-section="splash" class="activeTab">Home</li>
-            <li id="resultsPage" data-section="results" class="activeTab">Results</li>
-            <li id="aboutPage" data-section="about" class="activeTab">About Us</li>
+            <li id="mainPage" data-section="splash" class="activeTab"><a href="#">Home</a></li>
+            <li id="resultsPage" data-section="results" class="activeTab"><a href="#">Results</a></li>
+            <li id="aboutPage" data-section="about" class="activeTab"><a href="#">About Us</a></li>
           </ul>
         </nav>
       </div>
     </header>
     <main>
+
       <div id="splashDisplay" class="tabContent">
         <p>Nope.</p>
       </div>
+
       <div id="resultsDisplay" class="tabContent">
-        <p>Yes?</p>
+        <nav class="resultsNav">
+          <ul>
+            <li id="ccResults"><button type="button" name="ccButton">City/County</button></li>
+            <li id="stateResults"><button type="button" name="stateButton">State</button></li>
+            <li id="federalResults"><button type="button" name="federalButton">Federal</button></li>
+          </ul>
+        </nav>
+        <div id="resultsBox">
+          
+        </div>
       </div>
+
       <div id="aboutDisplay" class="tabContent">
         <p>I dunno.</p>
       </div>
+
     </main>
     <footer>
 
