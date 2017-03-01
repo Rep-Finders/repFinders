@@ -1,10 +1,10 @@
 'use strict';
 
-(function(module){
+(function (module) {
 
   const resultsView = {};
 
-//take Official objects and render them
+  //take Official objects and render them
   resultsView.index = function () {
     $('#resultsBox div').empty();
     Official.all.map(function(official){
@@ -20,18 +20,17 @@
     })
   }
 
-  resultsView.viewFederal = function(){
-    // $('#federalResults').prepend('<h3>Federal Results</h3>')
+  resultsView.viewFederal = function () {
     $('.repData').hide()
     $('#federalResults').show();
   }
 
-  resultsView.viewState = function(){
+  resultsView.viewState = function () {
     $('.repData').hide()
     $('#stateResults').show();
   }
 
-  resultsView.viewCityCounty = function(){
+  resultsView.viewCityCounty = function () {
     $('.repData').hide()
     $('#ccResults').show();
   }
