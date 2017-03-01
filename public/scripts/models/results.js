@@ -4,8 +4,15 @@
 (function(module){
 // const googleKey = 'AIzaSyBn8LzF8dJrO19Q_DtaMEiq9MQXtMxW3sQ';
   const googleKey = 'AIzaSyD8ekRODpXPsHFXHtxMrfQkV8e4ZqO6aEA';
-  let inputAddress = '98338';
   const results = {};
+  results.inputAddress = '98338';
+
+  $('.zip-code-form button').on('click', function(e){
+    e.preventDefault();
+    results.inputAddress = $('.zip-code-form input').val();
+    // console.log($('#resultsPage a').select());
+    window.location.href='/results';
+  })
 
 
   function Official(offTitle, name, div, email, phone, url, addr, party, divFormatted) {
@@ -23,7 +30,7 @@
 
   results.fetchAll = function(callback){
     $.ajax({
-      url: `https://www.googleapis.com/civicinfo/v2/representatives?key=${googleKey}&address=${inputAddress}`,
+      url: `https://www.googleapis.com/civicinfo/v2/representatives?key=${googleKey}&address=${results.inputAddress}`,
       method: 'GET',
       complete: (data) => {
         let officials = data.responseJSON.officials;

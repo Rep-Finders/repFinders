@@ -25,7 +25,7 @@
       console.log('about to call toHtml');
       $('#resultsBox').append(official.toHtml())
     })
-};
+
 
   module.resultsView = resultsView;
 })(window);
