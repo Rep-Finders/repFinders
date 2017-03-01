@@ -1,0 +1,76 @@
+/*LINK STYLES
+=======================================*/
+
+a, a:link, a:active {
+  text-decoration: underline;
+  color: inherit;
+}
+
+a:hover, a:focus {
+  color: white;
+}
+
+a:visited {
+}
+
+/*BODY STYLES*/
+
+body {
+  background-color: #E3E3E3;
+  line-height: 1.5;
+  /*font-size: 100%;*/
+  color: #313131;
+  width: 100%;
+  margin: 0px 0px 0px 0px;
+  font-size: 110%;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/*NAV BAR*/
+#headerName {
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  font-family: 'Montserrat', sans-serif;
+  margin: 10px 10px 10px 10px;
+  text-decoration: none;
+  color: #AF2311;
+  /*border: 5px dotted pink;*/
+}
+.siteHeader {
+  /*border: red 3px dotted;*/
+  margin: auto;
+  height: 105px;
+  background-color: lightgrey;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.mainNav {
+  display: inline;
+  float: right;
+  font-size: 1em;
+  height: 100px;
+  text-align: right;
+}
+
+.mainNav > ul {
+  margin-right: 0px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-left: 0px;
+  padding-right: : 0px;
+  width: auto;
+}
+
+.mainNav > ul > li {
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 100%;
+}
+
+.siteHeader {
+  max-width: 100%;
+  max-height: 100%;
+}

@@ -1,0 +1,23 @@
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.mainNav {
+  max-width: 100%;
+  float: right;
+}
+
+/* REVIEW: Add styles so the filters lay out better on desktop. */
+@media only screen and (min-width: 750px) {
+  .siteHeader {
+    display: block;
+  }
+  .headerName {
+    padding: .1em .1em .1em 2em;
+    float: left;
+  }
+}
