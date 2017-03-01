@@ -60,7 +60,8 @@
               officials[ind].address = officials[ind].address[0];
             }
 
-            Official.all.push(new Official(office.name, officials[ind].name, office.divisionId, officials[ind].emails, officials[ind].phones[0], officials[ind].urls, officials[ind].address, officials[ind].party, divFormatted))
+            Official.all.push(new Official(office.name, officials[ind].name, office.divisionId, officials[ind].emails, officials[ind].phones[0], officials[ind].urls, officials[ind].address, officials[ind].party, divFormatted));
+            localStorage.officials = JSON.stringify(Official.all);
 
           })//end office officialIndices.map
         })//end offices.map

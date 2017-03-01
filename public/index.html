@@ -1,86 +1,90 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <script id="entry-template" type="text/x-handlebars-template">
-      <div class="entry">
-        <h2>{{name}}</h2>
-        <h2>{{officeTitle}}</h2>
-        <h3>{{party}}</h3>
-        <ul>Contact Info
-          <li>Email: <a href="mailto:{{email}}">{{email}}</a></li>
-          <li>Phone: {{phone}}</li>
-          <li>Address: {{address.line1}}, {{address.city}}, {{address.state}}, {{address.zip}} </li>
-          <li>Website: <a href="{{url}}">{{url}}</a></li>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <script id="entry-template" type="text/x-handlebars-template">
+    <div class="entry">
+      <h2>{{name}}</h2>
+      <h2>{{officeTitle}}</h2>
+      <h3>{{party}}</h3>
+      <ul>Contact Info
+        <li>Email: <a href="mailto:{{email}}">{{email}}</a></li>
+        <li>Phone: {{phone}}</li>
+        <li>Address: {{address.line1}}, {{address.city}}, {{address.state}}, {{address.zip}} </li>
+        <li>Website: <a href="{{url}}">{{url}}</a></li>
+      </ul>
+    </div>
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="siteHeader">
+      <h1 id="headerName">Rep-Finder</h1>
+      <nav class="mainNav">
+        <span class="iconMenu"></span>
+        <ul class="pageNav">
+          <li id="mainPage" data-section="splash" class="activeTab"><a href="/">Home</a></li>
+          <li id="resultsPage" data-section="results" class="activeTab"><a href="/results">Results</a></li>
+          <li id="aboutPage" data-section="about" class="activeTab"><a href="/about">About Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+
+    <div id="splashDisplay" class="tabContent">
+      <p>Nope.</p>
+      <form class="zip-code-form">
+        <input type="number" name="zip-code-input">
+        <button type="submit">Search Reps</button>
+
+      </form>
+    </div>
+
+    <div id="resultsDisplay" class="tabContent">
+      <div class="resultsNav">
+        <ul>
+          <li data-section="cc" class="repDataButton" id="ccResultsButton"><a href="/city-county">City/County</a></li>
+          <li data-section="state" class="repDataButton" id="stateResultsButton"><a href="/state">State</a></li>
+          <li data-section="federal" class="repDataButton" id="federalResultsButton"><a href="/federal">Federal</a></li>
         </ul>
       </div>
-    </script>
-  </head>
-  <body>
-    <header>
-      <div class="siteHeader">
-        <h1 id="headerName">Rep-Finder</h1>
-        <nav class="mainNav">
-          <span class="iconMenu"></span>
-          <ul class="pageNav">
-            <li id="mainPage" data-section="splash" class="activeTab"><a href="/">Home</a></li>
-            <li id="resultsPage" data-section="results" class="activeTab"><a href="/results">Results</a></li>
-            <li id="aboutPage" data-section="about" class="activeTab"><a href="/about">About Us</a></li>
-          </ul>
-        </nav>
+      <div id="resultsBox">
+        <div class="repData" id="allResults">all</div>
+        <div class="repData" id="ccResults">cc</div>
+        <div class="repData" id="stateResults">state</div>
+        <div class="repData" id="federalResults">federal</div>
       </div>
-    </header>
-    <main>
+    </div>
 
-      <div id="splashDisplay" class="tabContent">
-        <p>Nope.</p>
-        <form class="zip-code-form">
-          <input type="number" name="zip-code-input">
-          <button type="submit">Search Reps</button>
+    <div id="aboutDisplay" class="tabContent">
+      <p>I dunno.</p>
+    </div>
 
-        </form>
-      </div>
+  </main>
+  <footer>
 
-      <div id="resultsDisplay" class="tabContent">
-        <div class="resultsNav">
-          <ul>
-            <li data-section="cc" class="repDataButton" id="ccResultsButton"><a href="/results/city-county">City/County</a></li>
-            <li data-section="state" class="repDataButton" id="stateResultsButton"><a href="/results/state">State</a></li>
-            <li data-section="federal" class="repDataButton" id="federalResultsButton"><a href="/results/federal">Federal</a></li>
-          </ul>
-        </div>
-        <div id="resultsBox">
-          <div class="repData" id="ccResults">cc</div>
-          <div class="repData" id="stateResults">state</div>
-          <div class="repData" id="federalResults">federal</div>
-        </div>
-      </div>
+  </footer>
+  <!-- =========================vendor scripts======================== -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
+  <script src="./vendor/page.js"></script>
+  <!-- ========================model scripts============================= -->
+  <script src="./scripts/models/results.js"></script>
+  <!-- =========================controller scritps====================== -->
+  <script src="./scripts/controllers/splashController.js"></script>
+  <script src="./scripts/controllers/resultsController.js"></script>
+  <!-- =========================view scripts========================== -->
+  <script src="./scripts/views/splashView.js"></script>
+  <script src="./scripts/views/resultsView.js"></script>
+  <script src="./scripts/views/aboutView.js"></script>
+  <!-- <script src="./scripts/views/siteView.js"></script> -->
+  <!-- ===========================routes script==================== -->
+  <script src="./scripts/models/routes.js"></script>
+</body>
 
-      <div id="aboutDisplay" class="tabContent">
-        <p>I dunno.</p>
-      </div>
-
-    </main>
-    <footer>
-
-    </footer>
-    <!-- =========================vendor scripts======================== -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
-    <script src="./vendor/page.js"></script>
-    <!-- ========================model scripts============================= -->
-    <script src="./scripts/models/results.js"></script>
-    <!-- =========================controller scritps====================== -->
-    <script src="./scripts/controllers/splashController.js"></script>
-    <script src="./scripts/controllers/resultsController.js"></script>
-    <!-- =========================view scripts========================== -->
-    <script src="./scripts/views/splashView.js"></script>
-    <script src="./scripts/views/resultsView.js"></script>
-    <script src="./scripts/views/aboutView.js"></script>
-    <!-- <script src="./scripts/views/siteView.js"></script> -->
-    <!-- ===========================routes script==================== -->
-    <script src="./scripts/models/routes.js"></script>
-  </body>
 </html>
