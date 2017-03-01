@@ -1,37 +1,39 @@
 'use strict';
 
 
-(function(module){
-// const googleKey = 'AIzaSyBn8LzF8dJrO19Q_DtaMEiq9MQXtMxW3sQ';
+(function (module) {
+  // const googleKey = 'AIzaSyBn8LzF8dJrO19Q_DtaMEiq9MQXtMxW3sQ';
   const googleKey = 'AIzaSyD8ekRODpXPsHFXHtxMrfQkV8e4ZqO6aEA';
   const results = {};
-  results.inputAddress = '98338';
 
-  $('.zip-code-form button').on('click', function(e){
+  $('.zip-code-form button').on('click', function (e) {
     e.preventDefault();
-    results.inputAddress = $('.zip-code-form input').val();
-    // console.log($('#resultsPage a').select());
-    window.location.href='/results';
+    console.log('clicked');
+    localStorage.clear();
+    localStorage.inputAddress = $('.zip-code-form input').val();
+    window.location.href = '/results';
   })
 
 
   function Official(offTitle, name, div, email, phone, url, addr, party, divFormatted) {
     this.officeTitle = offTitle,
-    this.name = name,
-    this.division = div,
-    this.email = email,
-    this.phone = phone,
-    this.url = url,
-    this.address = addr,
-    this.party = party,
-    this.divFormatted = divFormatted;
+      this.name = name,
+      this.division = div,
+      this.email = email,
+      this.phone = phone,
+      this.url = url,
+      this.address = addr,
+      this.party = party,
+      this.divFormatted = divFormatted;
   }
   Official.all = [];
 
-  results.fetchAll = function(callback){
+  results.fetchAll = function (callback) {
     Official.all = [];
+    console.log(localStorage.inputAddress)
+
     $.ajax({
-      url: `https://www.googleapis.com/civicinfo/v2/representatives?key=${googleKey}&address=${results.inputAddress}`,
+      url: `https://www.googleapis.com/civicinfo/v2/representatives?key=${googleKey}&address=${localStorage.inputAddress}`,
       method: 'GET',
       complete: (data) => {
         let officials = data.responseJSON.officials;
@@ -67,19 +69,19 @@
         })//end offices.map
       }//end of complete setting
     })//end ajax
-    .then(function(){
-    console.log(Official.all);
-    callback();
-    })//end .then
+      .then(function () {
+        console.log(Official.all);
+        callback();
+      })//end .then
   }//end fetchAll
 
-  Official.prototype.toHtml = function() {
+  Official.prototype.toHtml = function () {
     let source = $('#entry-template').html();
     let template = Handlebars.compile(source);
     return template(this);
   }
 
-  results.formatDivision = function(office) {
+  results.formatDivision = function (office) {
     let divFormatted = {};
     office.divisionId.split('/')
       .filter(function (sequence, index, self) {
