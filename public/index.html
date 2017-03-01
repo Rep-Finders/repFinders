@@ -44,13 +44,13 @@
       </div>
 
       <div id="resultsDisplay" class="tabContent">
-        <nav class="resultsNav">
+        <div class="resultsNav">
           <ul>
-            <li data-section="cc" class="repDataButton" id="ccResultsButton"><button type="button" name="ccButton">City/County</button></li>
-            <li data-section="state" class="repDataButton" id="stateResultsButton"><button type="button" name="stateButton">State</button></li>
-            <li data-section="federal" class="repDataButton" id="federalResultsButton"><button type="button" name="federalButton">Federal</button></li>
+            <li data-section="cc" class="repDataButton" id="ccResultsButton"><a href="/results/city-county">City/County</a></li>
+            <li data-section="state" class="repDataButton" id="stateResultsButton"><a href="/results/state">State</a></li>
+            <li data-section="federal" class="repDataButton" id="federalResultsButton"><a href="/results/federal">Federal</a></li>
           </ul>
-        </nav>
+        </div>
         <div id="resultsBox">
           <div class="repData" id="ccResults">cc</div>
           <div class="repData" id="stateResults">state</div>
@@ -79,7 +79,7 @@
     <script src="./scripts/views/splashView.js"></script>
     <script src="./scripts/views/resultsView.js"></script>
     <script src="./scripts/views/aboutView.js"></script>
-    <script src="./scripts/views/siteView.js"></script>
+    <!-- <script src="./scripts/views/siteView.js"></script> -->
     <!-- ===========================routes script==================== -->
     <script src="./scripts/models/routes.js"></script>
   </body>
