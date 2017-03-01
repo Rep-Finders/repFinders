@@ -8,19 +8,20 @@
   resultsView.index = function () {
     $('#resultsBox div').empty();
     Official.all.map(function(official){
-      if (official.divFormatted.divLevel === 'federal') {
+      if (official.divFormatted.divLevel === 'country') {
         $('#federalResults').append(official.toHtml());
       } else if (official.divFormatted.divLevel === 'state') {
         $('#stateResults').append(official.toHtml());
       } else {
         $('#ccResults').append(official.toHtml());
       }
-      $('#tabContent').hide()
+      $('.tabContent').hide()
       $('#resultsDisplay').show();
     })
   }
 
   resultsView.viewFederal = function(){
+    // $('#federalResults').prepend('<h3>Federal Results</h3>')
     $('.repData').hide()
     $('#federalResults').show();
   }
