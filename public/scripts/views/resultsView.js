@@ -4,13 +4,13 @@
 
   const resultsView = {};
 
-  resultsView.index = function() {
-    //render results?
-    Official.all.forEach(function(official){
-      console.log('about to call toHtml');
-      $('#resultsBox').append(official.toHtml())
-    })
-  };
+  // resultsView.index = function() {
+  //   //render results?
+  //   Official.all.forEach(function(official){
+  //     console.log('about to call toHtml');
+  //     $('#resultsBox').append(official.toHtml())
+  //   })
+  // };
 
   resultsView.filter = function() {
     //this needs to go somewhere else, just an idea
@@ -51,10 +51,15 @@
       $('#ccResults').append(official.toHtml());
     })
 
-    $('#resultsBox').hide();
+    // $('#resultsBox').fadeOut();
   };
 
 
+  $('.resultsNav').on('click', '.repDataButton', function(){
+    $('.repData').hide();
+    $('#' + $(this).data('section') + 'Results').fadeIn();
+  });
+  $('.resultsNav .repDataButton:first').click();
 
   module.resultsView = resultsView;
 })(window);
@@ -66,12 +71,3 @@
 // $('#resultsBox').append(template(official))
 // if(Official.div === federal)
 //   append to federal div
-
-
-
-//   $('.resultsNav').on('click', '.repDataButton', function(){
-//     $('.repData').hide();
-//     $('#' + $(this).data('section') + 'Results').fadeIn();
-//   });
-//   $('.resultsNav .repDataButton:first').click();
-// };
