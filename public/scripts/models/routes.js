@@ -1,14 +1,14 @@
 'use strict';
 
-// page('/', splashController.init);
+page('/', splashController.init);
 
 page('/results', resultsController.init);
 
 // page('/results/city', resultsView.viewCity);//these 3 or 4 func subject to change based on how resultsView is coded
-// page('/results/county', resultsView.viewCounty);
-// page('/results/state', resultsView.viewState);
-// page('/results/federal', resultsView.viewFederal);
+page('/city-county', resultsView.viewCityCounty);
+page('/state', resultsView.viewState);
+page('/federal', resultsView.viewFederal);
 
-// page('/about', aboutView.init);
+page('/about', aboutView.init);
 
 page();

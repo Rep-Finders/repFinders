@@ -12,7 +12,8 @@
   const splashView = {};
 
   splashView.index = function () {
-    //render page
+    $('.tabContent').hide()
+    $('#splashDisplay').show();
   }
 
   module.splashView = splashView;
