@@ -52,3 +52,20 @@
   max-width: 100%;
   max-height: 100%;
 }
+
+
+.bioClass img {
+  min-width: 50px;
+  max-width: 150px;
+  min-height: 50px;
+  max-height: 150px;
+  float: left;
+}
+
+.bioClass p {
+  vertical-align: center;
+}
+
+.bioClass {
+  padding: 50px;
+}
