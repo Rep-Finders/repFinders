@@ -29,6 +29,7 @@
   Official.all = [];
 
   results.fetchAll = function(callback){
+    Official.all = [];
     $.ajax({
       url: `https://www.googleapis.com/civicinfo/v2/representatives?key=${googleKey}&address=${results.inputAddress}`,
       method: 'GET',

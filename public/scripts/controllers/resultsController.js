@@ -4,7 +4,7 @@
   const resultsController = {};
 
   resultsController.init = function (){
-    results.fetchAll(resultsView.index);
+    results.fetchAll(resultsView.filter);
   }
 
   module.resultsController = resultsController;
