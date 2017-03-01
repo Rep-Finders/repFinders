@@ -1,0 +1,52 @@
+.icon-menu {
+  font-size: 3em;
+  float: right;
+  padding-top: .30em
+}
+
+.mainNav {
+  padding: 0px 0px 0px 0px;
+}
+
+.mainNav ul {
+  display: none;
+  padding: 10px 10px 10px 10px;
+  list-style: none;
+  clear: both;
+}
+
+.mainNav li {
+  margin-right: .4em;
+  font-size: 1.5em;
+  padding: .5em .2em;
+}
+
+@media only screen and (min-width: 750px) {
+    .icon-menu {
+        display: none;
+    }
+    .mainNav ul {
+        display: block;
+        text-align: center;
+    }
+    .mainNav li {
+        display: block;
+        width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 750px) {
+  .icon-menu {
+    font-size: 3em;
+    float: right;
+    padding-top: .30em
+  }
+  .mainNav:hover ul {
+    display: block;
+  }
+
+  .mainNav:hover li {
+    display: block;
+  }
+}

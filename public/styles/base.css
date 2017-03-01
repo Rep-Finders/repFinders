@@ -1,3 +1,64 @@
 li {
   list-style: none;
 }
+
+/*LINK STYLES
+=======================================*/
+
+a, a:link, a:active {
+  text-decoration: underline;
+  color: inherit;
+}
+
+a:hover, a:focus {
+  color: white;
+}
+
+a:visited {
+}
+
+/*BODY STYLES*/
+
+body {
+  background-color: #E3E3E3;
+  line-height: 1.5;
+  /*font-size: 100%;*/
+  color: #313131;
+  width: 100%;
+  margin: 0px 0px 0px 0px;
+  font-size: 110%;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/*NAV BAR*/
+#headerName {
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  font-family: 'Montserrat', sans-serif;
+  margin: 10px 10px 10px 10px;
+  text-decoration: none;
+  color: #AF2311;
+  /*border: 5px dotted pink;*/
+}
+.siteHeader {
+  /*border: red 3px dotted;*/
+  margin: auto;
+  height: 105px;
+  background-color: lightgrey;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.resultsNav li {
+  color: #E3E3E3;
+  background-color: #AF2311;
+  display: inline-block;
+  border: 2px black solid;
+}
+
+.entry {
+  border: 2px black solid;
+  margin: 10px;
+  /*border-right: 2px black solid;
+  border-bottom: 1px black solid;
+  border-left: 2px black solid;*/
+}
