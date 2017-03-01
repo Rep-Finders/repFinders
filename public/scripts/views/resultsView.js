@@ -30,7 +30,31 @@
     filteredOfficials.forEach(function(official){
       $('#federalResults').append(official.toHtml());
     })
+
+    selectedDivLevel = 'state'; //will need to be dynamic based on tab they click, then delete this.
+
+    filteredOfficials = allOfficials.filter(function(official) {
+      console.log(selectedDivLevel);
+      return (official.divFormatted.divLevel === selectedDivLevel);
+    })
+    filteredOfficials.forEach(function(official){
+      $('#stateResults').append(official.toHtml());
+    })
+
+    selectedDivLevel = 'county'; //will need to be dynamic based on tab they click, then delete this.
+
+    filteredOfficials = allOfficials.filter(function(official) {
+      console.log(selectedDivLevel);
+      return (official.divFormatted.divLevel === selectedDivLevel);
+    })
+    filteredOfficials.forEach(function(official){
+      $('#ccResults').append(official.toHtml());
+    })
+
+    $('#resultsBox').hide();
   };
+
+
 
   module.resultsView = resultsView;
 })(window);
