@@ -4,6 +4,19 @@ form {
   margin: 2em auto 0;
 }
 
+#splashBG {
+  position:absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
+.instructions {
+  background-color: rgba(201, 201, 201, 0.5);
+  margin: 2em;
+}
 
 
 /*-----------------RESULTS VIEW STYLES--------------------*/
@@ -27,12 +40,16 @@ form {
 
 /*------------------ABOUT VIEW STYLES------------------------*/
 
+/*.aboutDisplay {
+  max-height: 1000px;
+}*/
+
 .bioClass img {
+  float: left;
   min-width: 50px;
   max-width: 150px;
   min-height: 50px;
   max-height: 150px;
-  float: left;
 }
 
 .bioClass p {
@@ -40,7 +57,46 @@ form {
 }
 
 .bioClass {
-  padding: 50px;
+  /*padding: 50px;*/
+  display: inline-block;
+}
+
+.bioClass {
+  padding: 10px;
+  margin: 25px;
+  /*border: 2px black solid;*/
+}
+
+
+.aboutText {
+  vertical-align: middle;
+}
+/*
+.aboutImg {
+  max-width: 50%;
+  max-height: 50%;*/
+}
+
+@media only screen and (min-width: 750px) {
+  .bioClass {
+    max-width: 100%;
+  }
+
+  #imgRight {
+    float: right;
+  }
+
+  #aboutTextRight {
+    float: right;
+  }
+
+  #imgLeft {
+    float: left;
+  }
+
+  #aboutTextLeft {
+    float: left;
+  }
 }
 
 /*------------------HEADER STYLES---------------*/

@@ -45,12 +45,13 @@
     <main>
 
       <div id="splashDisplay" class="tabContent">
-
+        <img src="./styles/img/splashBG.jpg" id="splashBG">
+        <h3 class="instructions">Welcome to Rep-Finder!</h3>
         <form class="zip-code-form">
-          <input type="text" name="zip-code-input">
+          <input type="number" name="zip-code-input" id="zip">
           <button type="submit">Search Reps</button>
         </form>
-
+        <h4 class="instructions">Type in your zip code below and find who your representatives are for your location.</h4>
       </div>
 
       <div id="resultsDisplay" class="tabContent">
@@ -70,10 +71,34 @@
       </div>
 
       <div id="aboutDisplay" class="tabContent">
-        <div class="bioClass"><img src="/styles/img/Steven.jpg"></img><p>Steven is a student at Codefellows, aiming to learn full stack javascript. In his spare time, he enjoys skiing, golf, and watching interesting shows on netflix. He has a BBA from Pacific Lutheran University in Tacoma, and was a Aviation Precision Measurement Equipment Calibration and Repair Technician in the USMC.</p></div>
-        <div class="bioClass"><p>Austin is a general computer and video game nerd with an incredible interest in programming. He can generally be found playing Pokemon or Fire Emblem games in his spare time.</p></div>
-        <div class="bioClass">  </div>
-        <div class="bioClass">  </div>
+        <div class="bioClass">
+          <img src="/styles/img/Steven.jpg" class="aboutImg" id="imgLeft">
+          <div>
+            <p class="aboutText" id="aboutTextRight">Steven is a student at Codefellows, aiming to learn full stack javascript. In his spare time, he enjoys skiing, golf, and watching interesting shows on netflix. He has a BBA from Pacific Lutheran University in Tacoma, and was a Aviation Precision Measurement Equipment Calibration and Repair Technician in the USMC.</p>
+          </div>
+        </div>
+
+        <div class="bioClass">
+          <img src="/styles/img/Austin.jpg" class="aboutImg" id="imgRight">
+          <div>
+            <p class="aboutText" id="aboutTextLeft">2015 graduate of Henry M Jackson High School, Austin is a general computer and video game nerd with an incredible interest in programming. He can generally be found playing Pokemon or Fire Emblem games in his spare time.</p>
+          </div>
+        </div>
+
+        <div class="bioClass">
+          <img src="/styles/img/Luis.jpg" class="aboutImg" id="imgLeft">
+          <div>
+            <p class="aboutText" id="aboutTextRight">After graduating high school in Los Angeles, CA, Luis joined the Air Force where he worked as a meteorologist. He became fascinated with meteorological models and the technology involved. Seeing this interest, his supervisor suggested he take over the technical aspects of his squadron and from then on, his main interest has been coding. He also likes table tennis, golden retrievers and studying languages.</p>
+          </div>
+        </div>
+
+        <div class="bioClass">
+          <img src="/styles/img/David.jpg" class="aboutImg" id="imgRight">
+          <div>
+            <p class="aboutText" id="aboutTextLeft">Hello my name is David Cole and I am from Seattle though I have lived all around the country. I have been working in the music industry for 15 years and if there is one thing that I have learned from my experiences is that there are no guaranties that you will have a job tomorrow. That is why I have chosen to become a web developer. The tech-industry is the fastest growing industry in America and web development is the new 'factory job' as in you can live comfortably off the wages and your career will not become obsolete any time soon. Being a web developer will change my life for the better and that's all I can ask.</p>
+          </div>
+        </div>
+
       </div>
 
     </main>

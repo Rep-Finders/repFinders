@@ -2,16 +2,25 @@
 
 
 (function (module) {
-  const googleKey = 'AIzaSyD8ekRODpXPsHFXHtxMrfQkV8e4ZqO6aEA';
+
   const results = {};
 
   $('.zip-code-form button').on('click', function (e) {
     e.preventDefault();
-    console.log('clicked');
+    let $inputValue = $('.zip-code-form input').val();
+    let inputValidity = validate($inputValue);
     localStorage.clear();
-    localStorage.inputAddress = $('.zip-code-form input').val();
-    window.location.href = '/results';
-  })
+    if (inputValidity) {
+      localStorage.inputAddress = $inputValue;
+      window.location.href = '/results';
+    } else {
+      console.log('invalid');
+      let inputBox = document.getElementById('zip');
+      inputBox.setCustomValidity('Enter a Valid Zip Code or Address');
+      inputBox.reportValidity();
+    }
+
+  });
 
 
   function Official(offTitle, name, div, email, phone, url, addr, party, divFormatted) {
@@ -32,7 +41,7 @@
     console.log(localStorage.inputAddress)
 
     $.ajax({
-      url: `https://www.googleapis.com/civicinfo/v2/representatives?key=${googleKey}&address=${localStorage.inputAddress}`,
+      url: `https://www.googleapis.com/civicinfo/v2/representatives?key=${process.env.GOOGLE_KEY}&address=${localStorage.inputAddress}`,
       method: 'GET',
       complete: (data) => {
         let officials = data.responseJSON.officials;
@@ -60,7 +69,7 @@
             } else {
               officials[ind].address = officials[ind].address[0];
             }
-            
+
             if (!officials[ind].phone) {
               officials[ind].phone = 'none';
             } else {
@@ -85,6 +94,17 @@
     let source = $('#entry-template').html();
     let template = Handlebars.compile(source);
     return template(this);
+  }
+
+  function validate(inputValue) {
+    console.log('calling validate', inputValue);
+    let pattern = /^\d{5}$/g;
+    let valid = inputValue.search(pattern);
+    if (valid === -1) {
+      return false;
+    } else {
+      return true;
+    }
   }
 
   results.formatDivision = function (office) {
