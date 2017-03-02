@@ -27,8 +27,21 @@ form {
 
 /*------------------ABOUT VIEW STYLES------------------------*/
 
+.bioClass img {
+  min-width: 50px;
+  max-width: 150px;
+  min-height: 50px;
+  max-height: 150px;
+  float: left;
+}
 
+.bioClass p {
+  vertical-align: center;
+}
 
+.bioClass {
+  padding: 50px;
+}
 
 /*------------------HEADER STYLES---------------*/
 
