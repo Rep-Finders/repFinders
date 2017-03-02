@@ -4,6 +4,7 @@
 (function (module) {
 
   const results = {};
+  const GOOGLE_KEY = 'AIzaSyD8ekRODpXPsHFXHtxMrfQkV8e4ZqO6aEA';
 
   $('.zip-code-form button').on('click', function (e) {
     e.preventDefault();
@@ -41,7 +42,7 @@
     console.log(localStorage.inputAddress)
 
     $.ajax({
-      url: `https://www.googleapis.com/civicinfo/v2/representatives?key=${process.env.GOOGLE_KEY}&address=${localStorage.inputAddress}`,
+      url: `https://www.googleapis.com/civicinfo/v2/representatives?key=${GOOGLE_KEY}&address=${localStorage.inputAddress}`,
       method: 'GET',
       complete: (data) => {
         let officials = data.responseJSON.officials;
