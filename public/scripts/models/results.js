@@ -2,7 +2,7 @@
 
 
 (function (module) {
-  const googleKey = 'AIzaSyD8ekRODpXPsHFXHtxMrfQkV8e4ZqO6aEA';
+
   const results = {};
 
   $('.zip-code-form button').on('click', function (e) {
@@ -41,7 +41,7 @@
     console.log(localStorage.inputAddress)
 
     $.ajax({
-      url: `https://www.googleapis.com/civicinfo/v2/representatives?key=${googleKey}&address=${localStorage.inputAddress}`,
+      url: `https://www.googleapis.com/civicinfo/v2/representatives?key=${process.env.GOOGLE_KEY}&address=${localStorage.inputAddress}`,
       method: 'GET',
       complete: (data) => {
         let officials = data.responseJSON.officials;
@@ -69,7 +69,7 @@
             } else {
               officials[ind].address = officials[ind].address[0];
             }
-            
+
             if (!officials[ind].phone) {
               officials[ind].phone = 'none';
             } else {
