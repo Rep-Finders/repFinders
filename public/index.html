@@ -4,71 +4,84 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+
+  <link rel="stylesheet" href="/styles/reset.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Titillium+Web" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="/styles/fonts/icomoon.svg"> -->
+  <link rel="stylesheet" href="/styles/icons.css">
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/layout.css">
+  <link rel="stylesheet" href="/styles/modules.css">
+  <title>Rep-Finder</title>
+
   <script id="entry-template" type="text/x-handlebars-template">
     <div class="entry">
       <h2>{{name}}</h2>
       <h2>{{officeTitle}}</h2>
-      <h3>{{party}}</h3>
+      <h3>Party: {{party}}</h3>
       <ul>Contact Info
         <li>Email: <a href="mailto:{{email}}">{{email}}</a></li>
         <li>Phone: {{phone}}</li>
         <li>Address: {{address.line1}}, {{address.city}}, {{address.state}}, {{address.zip}} </li>
-        <li>Website: <a href="{{url}}">{{url}}</a></li>
+        <li>Website: <a href="{{url}}">View Site</a></li>
       </ul>
     </div>
   </script>
 </head>
 
 <body>
-  <header>
-    <div class="siteHeader">
-      <h1 id="headerName">Rep-Finder</h1>
+  <div id='wrapper'>
+    <header class="siteHeader">
+      <h1 id="headerName" class="pull-left">Rep-Finder</h1>
       <nav class="mainNav">
-        <span class="iconMenu"></span>
+        <span class="icon-menu"></span>
         <ul class="pageNav">
           <li id="mainPage" data-section="splash" class="activeTab"><a href="/">Home</a></li>
           <li id="resultsPage" data-section="results" class="activeTab"><a href="/results">Results</a></li>
           <li id="aboutPage" data-section="about" class="activeTab"><a href="/about">About Us</a></li>
         </ul>
       </nav>
-    </div>
-  </header>
-  <main>
+    </header>
+    <main>
 
-    <div id="splashDisplay" class="tabContent">
-      <p>Nope.</p>
-      <form class="zip-code-form">
-        <input type="number" name="zip-code-input">
-        <button type="submit">Search Reps</button>
+      <div id="splashDisplay" class="tabContent">
 
-      </form>
-    </div>
+        <form class="zip-code-form">
+          <input type="text" name="zip-code-input">
+          <button type="submit">Search Reps</button>
+        </form>
 
-    <div id="resultsDisplay" class="tabContent">
-      <div class="resultsNav">
-        <ul>
-          <li data-section="cc" class="repDataButton" id="ccResultsButton"><a href="/city-county">City/County</a></li>
-          <li data-section="state" class="repDataButton" id="stateResultsButton"><a href="/state">State</a></li>
-          <li data-section="federal" class="repDataButton" id="federalResultsButton"><a href="/federal">Federal</a></li>
-        </ul>
       </div>
-      <div id="resultsBox">
-        <div class="repData" id="allResults">all</div>
-        <div class="repData" id="ccResults">cc</div>
-        <div class="repData" id="stateResults">state</div>
-        <div class="repData" id="federalResults">federal</div>
+
+      <div id="resultsDisplay" class="tabContent">
+        <div class="resultsNav">
+          <ul>
+            <li data-section="cc" class="repDataButton" id="ccResultsButton"><a href="/city-county">City/County</a></li>
+            <li data-section="state" class="repDataButton" id="stateResultsButton"><a href="/state">State</a></li>
+            <li data-section="federal" class="repDataButton" id="federalResultsButton"><a href="/federal">Federal</a></li>
+          </ul>
+        </div>
+        <div id="resultsBox">
+          <!-- <div class="repData" id="allResults">all</div> -->
+          <div class="repData" id="ccResults"></div>
+          <div class="repData" id="stateResults"></div>
+          <div class="repData" id="federalResults"></div>
+        </div>
       </div>
-    </div>
 
-    <div id="aboutDisplay" class="tabContent">
-      <p>I dunno.</p>
-    </div>
+      <div id="aboutDisplay" class="tabContent">
+        <div class="bioClass"><img src="/styles/img/Steven.jpg"></img><p>Steven is a student at Codefellows, aiming to learn full stack javascript. In his spare time, he enjoys skiing, golf, and watching interesting shows on netflix. He has a BBA from Pacific Lutheran University in Tacoma, and was a Aviation Precision Measurement Equipment Calibration and Repair Technician in the USMC.</p></div>
+        <div class="bioClass"><p>Austin is a general computer and video game nerd with an incredible interest in programming. He can generally be found playing Pokemon or Fire Emblem games in his spare time.</p></div>
+        <div class="bioClass">  </div>
+        <div class="bioClass">  </div>
+      </div>
 
-  </main>
-  <footer>
+    </main>
 
-  </footer>
+    <footer>
+      <div>CodeFellows 2017 Team Rep-Finders</div>
+    </footer>
+  </div>
   <!-- =========================vendor scripts======================== -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
@@ -82,7 +95,6 @@
   <script src="./scripts/views/splashView.js"></script>
   <script src="./scripts/views/resultsView.js"></script>
   <script src="./scripts/views/aboutView.js"></script>
-  <!-- <script src="./scripts/views/siteView.js"></script> -->
   <!-- ===========================routes script==================== -->
   <script src="./scripts/models/routes.js"></script>
 </body>

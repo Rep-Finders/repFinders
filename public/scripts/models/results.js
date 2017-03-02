@@ -2,7 +2,6 @@
 
 
 (function (module) {
-  // const googleKey = 'AIzaSyBn8LzF8dJrO19Q_DtaMEiq9MQXtMxW3sQ';
   const googleKey = 'AIzaSyD8ekRODpXPsHFXHtxMrfQkV8e4ZqO6aEA';
   const results = {};
 
@@ -61,12 +60,19 @@
             } else {
               officials[ind].address = officials[ind].address[0];
             }
+            
+            if (!officials[ind].phone) {
+              officials[ind].phone = 'none';
+            } else {
+              officials[ind].phone = officials[ind].phone[0];
+            }
 
-            Official.all.push(new Official(office.name, officials[ind].name, office.divisionId, officials[ind].emails, officials[ind].phones[0], officials[ind].urls, officials[ind].address, officials[ind].party, divFormatted));
-            localStorage.officials = JSON.stringify(Official.all);
+            Official.all.push(new Official(office.name, officials[ind].name, office.divisionId, officials[ind].emails, officials[ind].phones, officials[ind].urls, officials[ind].address, officials[ind].party, divFormatted));
+
 
           })//end office officialIndices.map
         })//end offices.map
+        localStorage.officials = JSON.stringify(Official.all);
       }//end of complete setting
     })//end ajax
       .then(function () {

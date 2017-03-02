@@ -1,0 +1,51 @@
+/*--------------------FONT STYLES------------------*/
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.7em;
+}
+
+h3 {
+  font-size: 1.4em;
+}
+
+h4 {
+  font-size: 1.1em;
+}
+
+p, a, li, span, div {
+  font-size: 1em;
+}
+
+/*------------------LIST STYLES------------------*/
+li {
+  list-style: none;
+}
+
+/*--------------LINK STYLES-----------------*/
+
+a, a:link, a:active {
+  text-decoration: underline;
+  color: inherit;
+}
+
+a:hover, a:focus {
+  color: white;
+}
+
+a:visited {
+}
+
+/*----------------BODY STYLES------------*/
+
+body {
+  background-color: #E3E3E3;
+  line-height: 1.5;
+  color: #313131;
+  width: 100%;
+  min-width: 320px;
+  height:100%;
+  font-family: 'Montserrat', sans-serif;
+}
