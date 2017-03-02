@@ -4,6 +4,12 @@ form {
   margin: 2em auto 0;
 }
 
+form button {
+  background-color: white;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
 #splashBG {
   position:absolute;
   top: 0;
@@ -13,11 +19,31 @@ form {
   width: 100%;
 }
 
-.instructions {
+.splashWelcome {
   background-color: rgba(201, 201, 201, 0.5);
-  margin: 2em;
+  margin: 2em auto;
+  width: auto;
 }
 
+.instructions {
+  background-color: rgba(201, 201, 201, 0.5);
+  margin: 2em auto;
+  width: auto;
+}
+
+@media only screen and (min-width: 750px) {
+  .splashWelcome {
+    background-color: rgba(201, 201, 201, 0.5);
+    margin: 2em auto;
+    width: 15em;
+  }
+
+  .instructions {
+    background-color: rgba(201, 201, 201, 0.5);
+    margin: 2em auto;
+    width: 30em;
+  }
+}
 
 /*-----------------RESULTS VIEW STYLES--------------------*/
 
