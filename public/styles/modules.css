@@ -4,6 +4,19 @@ form {
   margin: 2em auto 0;
 }
 
+#splashBG {
+  position:absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
+.instructions {
+  background-color: rgba(201, 201, 201, 0.5);
+  margin: 2em;
+}
 
 
 /*-----------------RESULTS VIEW STYLES--------------------*/
