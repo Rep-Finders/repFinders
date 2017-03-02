@@ -74,11 +74,3 @@
 
   module.resultsView = resultsView;
 })(window);
-
-
-
-// Official.all.forEach(function(official) {
-// })
-// $('#resultsBox').append(template(official))
-// if(Official.div === federal)
-//   append to federal div

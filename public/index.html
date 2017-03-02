@@ -5,8 +5,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link rel="stylesheet" href="/styles/reset.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Titillium+Web" rel="stylesheet">
-  <link rel="stylesheet" href="/styles/fonts/icomoon.svg">
+  <!-- <link rel="stylesheet" href="/styles/fonts/icomoon.svg"> -->
   <link rel="stylesheet" href="/styles/icons.css">
   <link rel="stylesheet" href="/styles/base.css">
   <link rel="stylesheet" href="/styles/layout.css">
@@ -17,66 +18,72 @@
     <div class="entry">
       <h2>{{name}}</h2>
       <h2>{{officeTitle}}</h2>
-      <h3>{{party}}</h3>
+      <h3>Party: {{party}}</h3>
       <ul>Contact Info
         <li>Email: <a href="mailto:{{email}}">{{email}}</a></li>
         <li>Phone: {{phone}}</li>
         <li>Address: {{address.line1}}, {{address.city}}, {{address.state}}, {{address.zip}} </li>
-        <li>Website: <a href="{{url}}">{{url}}</a></li>
+        <li>Website: <a href="{{url}}">View Site</a></li>
       </ul>
     </div>
   </script>
 </head>
 
 <body>
-  <header>
-    <div class="siteHeader">
-      <h1 id="headerName" class="pull-left">Rep-Finder</h1>
-      <nav class="mainNav">
-        <span class="icon-menu"></span>
-        <ul class="pageNav">
-          <li id="mainPage" data-section="splash" class="activeTab"><a href="/">Home</a></li>
-          <li id="resultsPage" data-section="results" class="activeTab"><a href="/results">Results</a></li>
-          <li id="aboutPage" data-section="about" class="activeTab"><a href="/about">About Us</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <main>
+  <div id='wrapper'>
+    <header class="siteHeader">
+        <h1 id="headerName" class="pull-left">Rep-Finder</h1>
+        <nav class="mainNav">
+          <span class="icon-menu"></span>
+          <ul class="pageNav">
+            <li id="mainPage" data-section="splash" class="activeTab"><a href="/">Home</a></li>
+            <li id="resultsPage" data-section="results" class="activeTab"><a href="/results">Results</a></li>
+            <li id="aboutPage" data-section="about" class="activeTab"><a href="/about">About Us</a></li>
+          </ul>
+        </nav>
+    </header>
+    <main>
 
-    <div id="splashDisplay" class="tabContent">
-      <form class="zip-code-form">
-        <input type="text" name="zip-code-input">
-        <button type="submit">Search Reps</button>
-      </form>
-    </div>
+      <div id="splashDisplay" class="tabContent">
 
-    <div id="resultsDisplay" class="tabContent">
-      <div class="resultsNav">
-        <ul>
-          <li data-section="cc" class="repDataButton" id="ccResultsButton"><a href="/city-county">City/County</a></li>
-          <li data-section="state" class="repDataButton" id="stateResultsButton"><a href="/state">State</a></li>
-          <li data-section="federal" class="repDataButton" id="federalResultsButton"><a href="/federal">Federal</a></li>
-        </ul>
+        <form class="zip-code-form">
+          <input type="text" name="zip-code-input">
+          <button type="submit">Search Reps</button>
+        </form>
+
       </div>
-      <div id="resultsBox">
-        <!-- <div class="repData" id="allResults">all</div> -->
-        <div class="repData" id="ccResults"></div>
-        <div class="repData" id="stateResults"></div>
-        <div class="repData" id="federalResults"></div>
+
+      <div id="resultsDisplay" class="tabContent">
+        <div class="resultsNav">
+          <ul>
+            <li data-section="cc" class="repDataButton" id="ccResultsButton"><a href="/city-county">City/County</a></li>
+            <li data-section="state" class="repDataButton" id="stateResultsButton"><a href="/state">State</a></li>
+            <li data-section="federal" class="repDataButton" id="federalResultsButton"><a href="/federal">Federal</a></li>
+          </ul>
+        </div>
+        <div id="resultsBox">
+          <!-- <div class="repData" id="allResults">all</div> -->
+          <div class="repData" id="ccResults"></div>
+          <div class="repData" id="stateResults"></div>
+          <div class="repData" id="federalResults"></div>
+        </div>
       </div>
-    </div>
 
-    <div id="aboutDisplay" class="tabContent">
+      <div id="aboutDisplay" class="tabContent">
 
-      <div class="bioClass">  </div>
-      <div class="bioClass">  </div>
-      <div class="bioClass">  </div>
-      <div class="bioClass">  </div>
+        <div class="bioClass">  </div>
+        <div class="bioClass">  </div>
+        <div class="bioClass">  </div>
+        <div class="bioClass">  </div>
 
-    </div>
+      </div>
 
-  </main>
+    </main>
+
+    <footer>
+      <div>CodeFellows 2017 Team Rep-Finders</div>
+    </footer>
+  </div>
   <!-- =========================vendor scripts======================== -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
@@ -92,9 +99,6 @@
   <script src="./scripts/views/aboutView.js"></script>
   <!-- ===========================routes script==================== -->
   <script src="./scripts/models/routes.js"></script>
-  <footer>
-    <div>CodeFellows 2017 Team Rep-Finders</div>
-  </footer>
 </body>
 
 </html>

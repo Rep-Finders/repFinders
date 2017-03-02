@@ -1,52 +1,108 @@
-.icon-menu {
-  font-size: 3em;
-  float: right;
-  padding-top: .30em
+/*--------------SPLASH VIEW STYLES--------------*/
+
+form {
+  margin: 2em auto 0;
+}
+
+
+
+/*-----------------RESULTS VIEW STYLES--------------------*/
+
+.entry {
+  border: 2px black solid;
+  margin: 10px;
+  /*border-right: 2px black solid;
+  border-bottom: 1px black solid;
+  border-left: 2px black solid;*/
+}
+
+.resultsNav li {
+  color: #E3E3E3;
+  background-color: #AF2311;
+  display: inline-block;
+  border: 2px black solid;
+  margin-top: 30px;
+}
+
+
+/*------------------ABOUT VIEW STYLES------------------------*/
+
+
+
+
+/*------------------HEADER STYLES---------------*/
+
+#headerName {
+  margin: .8em 0 0 .8em;
+  text-decoration: none;
+  color: #AF2311;
+  /*border: 5px dotted pink;*/
 }
 
 .mainNav {
-  padding: 0px 0px 0px 0px;
+  display: inline;
+  float: right;
+  height: 100px;
+}
+
+.icon-menu {
+  font-size: 3em;
+  float: right;
+  margin: .5em .1em;
 }
 
 .mainNav ul {
   display: none;
-  padding: 10px 10px 10px 10px;
-  list-style: none;
-  clear: both;
+  position: absolute;
+  width: 6em;
+  right: 0;
+  top: 4.4em;
+  background-color: lightgray;
+  clear:both;
+}
+
+.mainNav:hover ul {
+  display: block;
 }
 
 .mainNav li {
-  margin-right: .4em;
-  font-size: 1.5em;
-  padding: .5em .2em;
+  display: block;
+  border: 1px solid black;
+}
+
+.mainNav:hover li {
+  display: block;
 }
 
 @media only screen and (min-width: 750px) {
-    .icon-menu {
-        display: none;
-    }
-    .mainNav ul {
-        display: block;
-        text-align: center;
-    }
-    .mainNav li {
-        display: block;
-        width: 100%;
-    }
-
-}
-
-@media only screen and (max-width: 750px) {
   .icon-menu {
-    font-size: 3em;
-    float: right;
-    padding-top: .30em
+    display: none;
   }
+
+  .mainNav ul {
+    display: inline;
+    position: relative;
+    width: 6em;
+    right: 1em;
+    top: 4em;
+    background-color: lightgray;
+    clear:both;
+    text-align: center;
+  }
+
   .mainNav:hover ul {
-    display: block;
+    display: inline;
+  }
+
+  .mainNav li {
+    display: inline;
+    margin: 0 .3em;
+    padding: .1em;
+    border: 1px solid black;
+    font-size: 1.4em;
   }
 
   .mainNav:hover li {
-    display: block;
+    display: inline;
   }
 }
