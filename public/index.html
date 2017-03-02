@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>Rep-Finder</title>
   <script id="entry-template" type="text/x-handlebars-template">
     <div class="entry">
       <h2>{{name}}</h2>
@@ -37,11 +37,9 @@
   <main>
 
     <div id="splashDisplay" class="tabContent">
-      <p>Nope.</p>
       <form class="zip-code-form">
-        <input type="number" name="zip-code-input">
+        <input type="text" name="zip-code-input">
         <button type="submit">Search Reps</button>
-
       </form>
     </div>
 
@@ -54,15 +52,15 @@
         </ul>
       </div>
       <div id="resultsBox">
-        <div class="repData" id="allResults">all</div>
-        <div class="repData" id="ccResults">cc</div>
-        <div class="repData" id="stateResults">state</div>
-        <div class="repData" id="federalResults">federal</div>
+        <!-- <div class="repData" id="allResults">all</div> -->
+        <div class="repData" id="ccResults"></div>
+        <div class="repData" id="stateResults"></div>
+        <div class="repData" id="federalResults"></div>
       </div>
     </div>
 
     <div id="aboutDisplay" class="tabContent">
-      <p>I dunno.</p>
+      <p></p>
     </div>
 
   </main>
@@ -82,7 +80,6 @@
   <script src="./scripts/views/splashView.js"></script>
   <script src="./scripts/views/resultsView.js"></script>
   <script src="./scripts/views/aboutView.js"></script>
-  <!-- <script src="./scripts/views/siteView.js"></script> -->
   <!-- ===========================routes script==================== -->
   <script src="./scripts/models/routes.js"></script>
 </body>
