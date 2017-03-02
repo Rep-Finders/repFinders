@@ -8,11 +8,20 @@
 
   $('.zip-code-form button').on('click', function (e) {
     e.preventDefault();
-    console.log('clicked');
+    let $inputValue = $('.zip-code-form input').val();
+    let inputValidity = validate($inputValue);
     localStorage.clear();
-    localStorage.inputAddress = $('.zip-code-form input').val();
-    window.location.href = '/results';
-  })
+    if (inputValidity) {
+      localStorage.inputAddress = $inputValue;
+      window.location.href = '/results';
+    } else {
+      console.log('invalid');
+      let inputBox = document.getElementById('zip');
+      inputBox.setCustomValidity('Enter a Valid Zip Code or Address');
+      inputBox.reportValidity();
+    }
+
+  });
 
 
   function Official(offTitle, name, div, email, phone, url, addr, party, divFormatted) {
@@ -79,6 +88,17 @@
     let source = $('#entry-template').html();
     let template = Handlebars.compile(source);
     return template(this);
+  }
+
+  function validate(inputValue) {
+    console.log('calling validate', inputValue);
+    let pattern = /^\d{5}$/g;
+    let valid = inputValue.search(pattern);
+    if (valid === -1) {
+      return false;
+    } else {
+      return true;
+    }
   }
 
   results.formatDivision = function (office) {
