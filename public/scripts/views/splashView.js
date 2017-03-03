@@ -11,6 +11,12 @@
 (function(module){
   const splashView = {};
 
+  $('.icon-menu').on('click', function() {
+    
+    ($('.icon-menu ~ ul').slideToggle());
+     
+  });
+
   splashView.index = function () {
     $('.tabContent').hide()
     $('#splashDisplay').show();
